@@ -15,6 +15,42 @@ Do not rely on chat history for deferred engineering issues.
 
 ---
 
+## Resolution workflow
+
+This file is not a parking lot.
+
+Every open item must have a clear stage when it is revisited and then either:
+- **RESOLVED** — fix implemented and verified in the model / PCB / enclosure;
+- **SUPERSEDED** — no longer relevant because the architecture changed;
+- **ACCEPTED RISK** — intentionally kept with an explicit reason;
+- **BLOCKED** — cannot be resolved until a named dependency is available.
+
+### Review gates
+
+Open items must be reviewed at these project gates:
+
+1. **After realistic component modeling**
+   - resolve component-model inaccuracies;
+   - confirm which packaging conflicts are real.
+
+2. **Before PCB layout freeze**
+   - resolve land patterns, holes, connector footprints, antenna keepout, power-zone placement, sensor thermal isolation, and FPC connector issues.
+
+3. **Before enclosure geometry freeze**
+   - resolve wall clearances, battery retention/swelling allowance, USB-C cutout, encoder mounting stack, display/front-cover stack, airflow path, and wall-mount architecture.
+
+4. **Before prototype release**
+   - review every remaining active item;
+   - nothing may remain silently open.
+
+When an item is resolved, move it from **Active open items** to **Closed items** with:
+- resolution date;
+- what changed;
+- where it was changed;
+- verification result.
+
+---
+
 ## Active open items
 
 ### Display / FPC
