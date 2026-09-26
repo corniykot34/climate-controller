@@ -21,10 +21,15 @@
 - Rear depth from mounting-surface region: approximately **6.5 mm**.
 - Shaft diameter: **Ø6.0 mm**.
 - Shaft length L: **15.0 mm**.
-- For L=15 mm drawing table: **LB = 5.0 mm**, **F = 5.0 mm**.
+- For the **push-switch S variant** at L=15 mm: **LB = 5.0 mm**, **F = 7.0 mm**.
 - Bushing thread: **M7 × 0.75**.
 - Push-switch travel: **0.5 ± 0.3 mm**.
 - General drawing tolerance: dimensions <10 mm typically ±0.3 mm; 10–100 mm typically ±0.5 mm.
+
+## Hardware supplied in the manufacturer drawing
+
+- Nut: **M7 × 0.75**, across-flats / envelope dimension shown as **10.0 ± 0.5 mm**, thickness **2.0 ± 0.2 mm**.
+- Washer: **12.0 ± 0.3 mm OD**, **7.1 ± 0.3 mm ID**, **0.5 mm** thick.
 
 ## Packaging rules
 
