@@ -132,7 +132,6 @@ The following are intentionally not assigned final manufacturer P/Ns yet:
 - touch-series / protection components
 - PCB connectors for display / battery as required
 - final battery connector / lead configuration
-- final TPS63700 inductor
 
 These are to be frozen during schematic / PCB development, not guessed during mechanical blockout.
 
