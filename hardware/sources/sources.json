@@ -69,6 +69,16 @@
           "type": "step",
           "url": "https://www.espressif.com/sites/default/files/3dmodel/ESP32-S3-WROOM-2.STEP",
           "official": true
+        },
+        {
+          "type": "hardware_design_guidelines_html",
+          "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html",
+          "official": true
+        },
+        {
+          "type": "hardware_design_guidelines_pdf",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3_hardware_design_guidelines_en.pdf",
+          "official": true
         }
       ]
     },
