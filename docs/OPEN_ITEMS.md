@@ -244,10 +244,6 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 - **ESP32 shield cosmetic details remain provisional.**
   - Shield sheet thickness and plating detail are not mechanically critical and were not frozen.
 
-- **Existing Blender battery does not match the current BOM battery.**
-  - This is expected because the battery replacement pass has not yet been performed.
-  - Replace the old battery geometry with the AS405070 baseline before any final antenna / packaging conclusion is made.
-
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
@@ -270,6 +266,14 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-26 — Blender battery placeholder mismatch — RESOLVED
+
+- Replaced the obsolete battery placeholder with the AS405070 baseline.
+- Added physical pouch geometry at **70 × 50 × 4 mm**.
+- Added the project safety envelope at **72.5 × 50.5 × 5.0 mm**.
+- Verified that the physical pouch fits without collision.
+- Remaining pack-specific and side-clearance issues stay active above.
 
 Move items here only after they are actually resolved and reflected in the relevant BOM/component card/model.
 
