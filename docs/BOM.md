@@ -74,7 +74,7 @@ This file is the canonical component list for the current Environmental Controll
 | AMOLED positive rail | **TI TPS63900** | Second device dedicated to display supply | **SELECTED** | https://www.ti.com/product/TPS63900 |
 | AMOLED negative rail | **TI TPS63700** | Inverting DC/DC for OLED negative rail | **SELECTED** | https://www.ti.com/product/TPS63700 |
 | TPS63900 inductors | **Murata DFE252012F-2R2M**, ×2 | 2.2 µH; 2.5 × 2.0 × 1.2 mm | **SELECTED** | Use one per TPS63900 |
-| TPS63700 inductor | **4.7 µH low-profile shielded inductor** | Packaging target ≈3.8 × 3.6 × 1.2 mm | **VERIFY** | Exact currently-available manufacturer P/N still to be frozen |
+| TPS63700 inductor | **Murata DFE252012F-4R7M=P2** | 4.7 µH; 2.5 × 2.0 × 1.2 mm max | **SELECTED** | Murata DFE252012F family; current rating provides headroom over TPS63700 typical 1 A switch limit |
 
 ### Power / thermal requirements
 
