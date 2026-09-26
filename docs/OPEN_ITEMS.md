@@ -15,6 +15,36 @@ Do not rely on chat history for deferred engineering issues.
 
 ---
 
+## Review cadence
+
+The open-items file must be checked by the project lead / assistant at fixed workflow moments, not "when remembered":
+
+1. **Before every new Blender/MCP prompt**
+   - read `docs/OPEN_ITEMS.md`;
+   - identify any item whose `Resolve when` condition has become true;
+   - if one is actionable, resolve or explicitly schedule it before moving on.
+
+2. **Immediately after every Blender/MCP result**
+   - compare the report against existing open items;
+   - add new issues;
+   - update measurements/status on existing issues;
+   - close any item that has actually been resolved and verified.
+
+3. **Before any task that edits an artifact named in `Resolve in`**
+   - for example, before PCB work, review all items whose `Resolve in` is PCB;
+   - before enclosure work, review all enclosure items;
+   - before prototype work, review all prototype-dependent items.
+
+4. **At each formal review gate**
+   - after realistic component modeling;
+   - before PCB layout freeze;
+   - before enclosure geometry freeze;
+   - before prototype release.
+
+The next task must not be generated from chat context alone; the current `OPEN_ITEMS.md` must be checked first.
+
+---
+
 ## How we know an item is ready to resolve
 
 Do not rely on intuition or on a vague project stage.
