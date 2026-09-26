@@ -190,8 +190,13 @@
       "status": "selected_baseline_exact_pack_verify",
       "sources": [
         {
-          "type": "manufacturer_listing",
-          "url": "https://as-battery.com/index.php/3-subchannelproducts/65120-37V-55mah-lithium-polyme.html",
+          "type": "manufacturer_product_table",
+          "url": "https://www.as-battery.com/3-subchannelproducts/ULKCCB-Certification-approval.html",
+          "official": true
+        },
+        {
+          "type": "manufacturer_certification_table",
+          "url": "https://www.as-battery.com/index.php/certification.html",
           "official": true
         }
       ],
