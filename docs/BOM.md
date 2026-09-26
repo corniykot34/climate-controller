@@ -101,7 +101,7 @@ USB-C is for **charging and service/data** and is accessed from the **bottom edg
 
 | Function | Part | Key data | Status |
 |---|---|---|---|
-| Main PCB | **Custom PCB** | Current blockout ≈70 × 48.5 × 1.6 mm | **PROVISIONAL** |
+| Main PCB | **Custom PCB** | Current mechanically rebuilt PCB ≈70 × 50 × 1.6 mm | **PROVISIONAL** |
 | Front cover | **Custom glossy black touch-capable cover** | Current packaging assumption 1.5 mm | **PROVISIONAL** |
 | Rear / side enclosure | **Custom enclosure** | Current wall assumption 1.5 mm | **PROVISIONAL** |
 | Display adhesive / optical stack | **OCA / foam / adhesive layer** | Current nominal allowance 0.25 mm | **PROVISIONAL** |
@@ -114,7 +114,7 @@ Current blockout result, **not production-frozen**:
 - Body: approximately **76 × 120 × 20 mm**
 - Installed depth with wheel: approximately **27 mm**
 - Wheel: **Ø52 × 6 mm**
-- Current PCB: approximately **70 × 48.5 × 1.6 mm**
+- Current PCB: approximately **70 × 50 × 1.6 mm**
 
 These dimensions must be rechecked after replacing blockout components with realistic mechanical models.
 
