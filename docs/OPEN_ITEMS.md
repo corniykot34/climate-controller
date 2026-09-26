@@ -40,8 +40,34 @@ Do not rely on chat history for deferred engineering issues.
 
 - **Exact finished AS405070 pack variant is not frozen.**
   - Cell baseline: 3.7 V, 1700 mAh, nominal cell size about 4 × 50 × 70 mm.
-  - Exact PCM, wire exit, lead length and connector remain unresolved.
-  - Current Blender/mechanical work must continue to use the conservative project safety envelope, not pretend the finished pack is fully defined.
+  - Exact PCM, wire exit, lead length, connector, seam construction and retention remain unresolved.
+  - Current Blender/mechanical work uses the conservative project safety envelope, not a claimed production pack.
+
+- **Current AS405070 safety-envelope side clearance is below target.**
+  - Modeled safety envelope: **72.5 × 50.5 × 5.0 mm**.
+  - Minimum sidewall clearance: **0.25 mm**.
+  - Project target: **0.50 mm**.
+  - This is geometrically non-colliding but not yet acceptable as a production clearance.
+  - Resolve during enclosure / battery-retention redesign, not during component-modeling passes.
+
+- **Current battery clearances otherwise remain non-colliding.**
+  - Safety-envelope to PCB: **7.75 mm**.
+  - Safety-envelope to rear wall: **1.30 mm**.
+  - Physical pouch rear clearance: **1.80 mm**.
+  - Forward Z space over pouch footprint: at least **10.05 mm**.
+  - AMOLED clearance: **9.55 mm**.
+  - FPC clearance: **3.70 mm**.
+  - Encoder clearance: **16.35 mm**.
+  - USB-C clearance: **49.52 mm**.
+
+- **Battery-to-ESP32 RF spacing must be re-evaluated after final RF / PCB layout.**
+  - Physical pouch to antenna: approximately **8.04 mm**.
+  - Safety envelope to modeled antenna keepout: **7.75 mm**.
+  - Current spacing is non-colliding but does not by itself establish RF compliance.
+
+- **Tab / lead exit remains provisional.**
+  - Current model reserves a nonphysical **1.25 mm short-edge strip** inside the project envelope.
+  - Finished-pack suitability is not established.
 
 ### Touch
 
