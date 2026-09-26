@@ -15,6 +15,31 @@ Do not rely on chat history for deferred engineering issues.
 
 ---
 
+## How we know an item is ready to resolve
+
+Do not rely on intuition or on a vague project stage.
+
+Every active open item must carry these fields:
+
+- **Resolve when:** the concrete condition that makes the item actionable.
+- **Blocked by:** the dependency that must exist first.
+- **Resolve in:** the artifact where the fix belongs (component model / PCB / enclosure / firmware / prototype).
+- **Verification:** the measurable check that proves the item is actually closed.
+
+Example:
+
+> **Encoder bushing cannot clamp the current front cover**
+> - Resolve when: the front-stack architecture and encoder mounting method are being designed.
+> - Blocked by: realistic encoder geometry + front-cover stack.
+> - Resolve in: enclosure / midframe geometry.
+> - Verification: bushing, washer and nut clamp the support correctly while preserving required push travel and wheel clearance.
+
+An item is ready to resolve only when all information in **Blocked by** is available and the project is currently editing the artifact named in **Resolve in**.
+
+If those conditions are not met, the item stays open.
+
+---
+
 ## Resolution workflow
 
 This file is not a parking lot.
