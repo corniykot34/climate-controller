@@ -226,7 +226,11 @@ Project card:
 
 Official manufacturer listing showing AS405070:
 
-https://as-battery.com/index.php/3-subchannelproducts/65120-37V-55mah-lithium-polyme.html
+https://www.as-battery.com/3-subchannelproducts/ULKCCB-Certification-approval.html
+
+Official certification table:
+
+https://www.as-battery.com/index.php/certification.html
 
 Published data:
 - 3.7 V
