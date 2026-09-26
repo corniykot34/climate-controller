@@ -191,16 +191,24 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Provisional stakes currently stop **0.65 mm above the PCB underside**.
   - Freeze the exact USB4105 suffix before final PCB release.
 
-- **USB-C enclosure opening exists mechanically; production tolerance / DFM remains open.**
-  - Current mating face is recessed **0.50 mm** behind the exterior surface.
-  - Current opening: **15.60 × 7.18 mm**.
-  - Connector-to-opening clearance is at least **1.90 mm**.
-  - Plug-approach clearance is at least **0.30 mm** and currently unobstructed.
+- **USB-C enclosure opening is grossly oversized and must be corrected now.**
+  - Current opening: **15.60 × 7.18 mm** around a connector shell envelope of approximately **8.94 × 3.31 mm**.
+  - The previous pass incorrectly allowed the plug-approach reserve volume to drive the wall opening size.
+  - The plug-approach reference is an EXTERNAL clearance volume and must not define the enclosure cutout.
+  - The opening should instead closely follow the real receptacle face / shell envelope with only a small manufacturable perimeter clearance.
+  - Current project target for this corrective pass: approximately **0.25–0.30 mm per side** around the relevant exposed shell / mating-face envelope, subject to the manufacturer drawing.
+  - Keep the existing **0.50 mm mating-face recess** unless a conflict is discovered.
+  - **Resolve when:** immediately, before any further front-stack enclosure work.
+  - **Blocked by:** none; realistic USB4105 geometry and manufacturer drawing already exist.
+  - **Resolve in:** enclosure.
+  - **Verification:** opening is visually and mechanically close-fitting, plug insertion remains unobstructed, and no wall collision exists.
+
+- **USB-C production tolerance / DFM remains open after geometric correction.**
   - Final tolerance stack, manufacturing method and exact USB4105 stake variant remain unresolved.
   - **Resolve when:** enclosure DFM and connector production variant are frozen.
   - **Blocked by:** final USB4105 suffix + enclosure manufacturing process.
   - **Resolve in:** enclosure / DFM.
-  - **Verification:** port opening, plug insertion and connector retention meet drawing tolerances on production-intent geometry.
+  - **Verification:** port opening, plug insertion and connector retention meet production drawing tolerances.
 
 - **USB-C rear-wall clearance is limited but currently non-colliding.**
   - Provisional shell stakes have **1.15 mm** rear-wall clearance.
