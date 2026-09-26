@@ -100,6 +100,20 @@ Notes:
 - Use the official STEP for mechanical reference when the modeling toolchain can consume it.
 - Manufacturer land pattern and antenna placement rules override old placeholder geometry.
 
+Official ESP32-S3 hardware design guidelines — module placement / antenna clearance:
+
+https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html
+
+Official PDF version:
+
+https://www.espressif.com/sites/default/files/documentation/esp32-s3_hardware_design_guidelines_en.pdf
+
+Notes:
+- For module-on-board designs, Espressif recommends placing the PCB antenna outside the base board when possible.
+- If it cannot overhang, the base board should be cut away around and below the antenna region.
+- End-product housing clearance around the PCB antenna must also be considered and RF performance must be validated on hardware.
+
+
 Project card:
 
 `docs/components/ESP32_S3_WROOM_2_N32R16V.md`
