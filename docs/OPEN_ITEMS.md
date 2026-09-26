@@ -107,6 +107,30 @@ Do not rely on chat history for deferred engineering issues.
   - Undimensioned internal shell / insulator / contact details and the plug-approach allowance are not production geometry.
   - Use the manufacturer drawing as the source of truth where dimensions are available.
 
+### ESP32-S3-WROOM-2
+
+- **RF compliance is not established for the current ESP32 placement.**
+  - The module antenna faces the PCB edge but does **not** overhang the base PCB.
+  - Current main PCB remains directly beneath the full modeled **18 × 6 mm antenna footprint**.
+  - Espressif recommends placing the module PCB antenna outside the base board when possible; if that is not possible, the base board should be cut away below and beside the antenna to provide clearance.
+  - Current antenna-to-battery clearance: **7.75 mm**.
+  - Current antenna-to-enclosure-sidewall clearance: **1.50 mm**.
+  - Final RF layout must be checked against Espressif's module-placement guidance and later validated on hardware.
+
+- **ESP32 host-board antenna keepout is not yet implemented.**
+  - Underlying host-board copper / ground / traces beneath the antenna region remain unresolved.
+  - The current PCB blockout should not be interpreted as a valid RF layout.
+
+- **ESP32 host land pattern and solder-joint geometry are unresolved.**
+  - Castellated pads are represented mechanically, but the final manufacturer land pattern has not yet been implemented on the main PCB.
+
+- **ESP32 shield cosmetic details remain provisional.**
+  - Shield sheet thickness and plating detail are not mechanically critical and were not frozen.
+
+- **Existing Blender battery does not match the current BOM battery.**
+  - This is expected because the battery replacement pass has not yet been performed.
+  - Replace the old battery geometry with the AS405070 baseline before any final antenna / packaging conclusion is made.
+
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
