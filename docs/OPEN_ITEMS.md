@@ -301,8 +301,9 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Rear-wall clearance: **2.10 mm**.
   - Bottom-wall clearance: **2.75 mm**.
   - **Resolve when:** enclosure airflow / vent architecture is being designed.
-  - **Blocked by:** realistic component set + enclosure architecture.
+  - **Blocked by:** realistic component set + enclosure architecture — now substantially available.
   - **Resolve in:** enclosure.
+  - **Scheduled:** immediately after the front-stack / encoder-support pass so it remains a separate single-scope enclosure task.
   - **Verification:** open ambient-air path exists from exterior to sensing region without hard obstruction and without exposing the sensor to direct internal heat flow.
 
 - **SHT40 thermal isolation is not yet verified.**
