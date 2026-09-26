@@ -142,7 +142,7 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Resolve during enclosure / battery-retention redesign, not during component-modeling passes.
 
 - **Current battery clearances otherwise remain non-colliding.**
-  - Safety-envelope to PCB: **7.75 mm**.
+  - Safety-envelope to PCB: **7.25 mm**.
   - Safety-envelope to rear wall: **1.30 mm**.
   - Physical pouch rear clearance: **1.80 mm**.
   - Forward Z space over pouch footprint: at least **10.05 mm**.
@@ -178,16 +178,9 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Nut and washer fit the bushing itself, but cannot reach / clamp the current front structure.
   - Front support / encoder mounting architecture must be redesigned later; do not fake it during component-modeling passes.
 
-- **Encoder pin / PCB geometry is unresolved.**
-  - Provisional rear-facing pins currently intersect the unperforated PCB through the full **1.6 mm PCB thickness**.
-  - Final pin geometry and the real manufacturer footprint / board holes must be used during PCB design.
-
 - **Encoder pins penetrate the current rear wall by 0.9 mm.**
   - This is a direct conflict in the current blockout.
   - Resolve only after the realistic PCB / enclosure architecture is being rebuilt.
-
-- **Encoder body currently contacts the PCB mounting plane.**
-  - Verify whether this contact matches the actual Bourns mounting arrangement when the real footprint / mounting scheme is implemented.
 
 - **Encoder cosmetic / secondary mechanical details remain provisional.**
   - Flat depth, housing detail and exact pin layout are not yet manufacturer-verified in the Blender model.
@@ -198,12 +191,6 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Keep this as a constraint when the front stack is later redesigned.
 
 ### USB-C
-
-- **USB4105 PCB mounting features are not yet implemented in the PCB.**
-  - SMT tails currently meet the PCB top plane plausibly.
-  - Shell stakes penetrate **0.95 mm** into the currently unperforated **1.6 mm PCB**.
-  - Locating pegs penetrate **0.60 mm** into the unperforated PCB.
-  - Final PCB must add the manufacturer-defined pads / through-holes / locating holes.
 
 - **USB4105 shell-stake production suffix is still unresolved.**
   - Current Blender model uses a provisional stake length.
@@ -234,9 +221,14 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Current antenna-to-enclosure-sidewall clearance: **1.50 mm**.
   - Final RF layout must be checked against Espressif's module-placement guidance and later validated on hardware.
 
-- **ESP32 host-board antenna keepout is not yet implemented.**
-  - Underlying host-board copper / ground / traces beneath the antenna region remain unresolved.
-  - The current PCB blockout should not be interpreted as a valid RF layout.
+- **ESP32 host-board antenna cutaway is implemented mechanically; copper / RF margin is not yet validated.**
+  - The host PCB is now removed beneath the antenna with lateral cutback.
+  - Final copper-to-edge margin, ground geometry and RF validation remain unresolved.
+  - Housing RF clearance is still insufficient.
+  - **Resolve when:** electrical PCB layout and enclosure RF clearance are being finalized.
+  - **Blocked by:** final copper layout + enclosure geometry.
+  - **Resolve in:** PCB + enclosure + prototype.
+  - **Verification:** manufacturer placement/keepout guidance is met in board geometry and RF performance is validated on hardware.
 
 - **ESP32 host land pattern and solder-joint geometry are unresolved.**
   - Castellated pads are represented mechanically, but the final manufacturer land pattern has not yet been implemented on the main PCB.
@@ -274,12 +266,22 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
-  - Current approximate PCB: 70 × 48.5 × 1.6 mm.
+  - Current mechanically rebuilt PCB: **70 × 50 × 1.6 mm**.
   - Final PCB must be rebuilt around realistic component geometry.
 
 - **Current enclosure dimensions are provisional packaging results only.**
   - Current blockout: approximately 76 × 120 × 20 mm body, ~27 mm including wheel.
-  - Must be revalidated after realistic component replacement.
+  - Realistic component modeling and the mechanically rebuilt PCB are now complete enough to begin enclosure redesign.
+  - Current PCB-to-rear-wall clearance: **0.50 mm**.
+  - Must be revalidated during enclosure work.
+
+- **Corrected USB-C board-edge geometry collides with the current bottom wall.**
+  - The mechanically correct PCB / USB-C edge extends approximately **1.0 mm into the existing bottom wall**.
+  - This is a confirmed enclosure conflict, not a PCB modeling error.
+  - **Resolve when:** bottom enclosure / USB-C opening is redesigned.
+  - **Blocked by:** completed mechanical PCB and USB-C geometry — now available.
+  - **Resolve in:** enclosure.
+  - **Verification:** no interference between PCB/USB-C and bottom wall, with a manufacturable port opening and plug approach.
 
 - **Wall mounting architecture is intentionally deferred.**
   - Do not introduce wall-mount hardware until the internal mechanical architecture is stable.
@@ -308,13 +310,13 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - **Resolve in:** PCB.
   - **Verification:** sensor zone uses an appropriate copper/thermal-isolation strategy and prototype temperature error remains within the chosen system accuracy target.
 
-- **SHT40 PCB isolation geometry is unresolved.**
-  - Possible narrow-neck / slot / copper-reduction changes remain open.
-  - No PCB cuts or vent geometry were created during the component-modeling pass.
-  - **Resolve when:** sensor PCB region is being laid out.
-  - **Blocked by:** final PCB architecture.
-  - **Resolve in:** PCB.
-  - **Verification:** manufacturer land-pattern constraints are respected and the sensor region is physically isolated from major heat-conduction paths.
+- **SHT40 PCB isolation geometry is implemented mechanically but not thermally validated.**
+  - Current concept uses a **2 mm neck** and **4 mm sensor tip**, with land and no-underlying-copper reference regions.
+  - Electrical copper strategy and prototype thermal validation remain open.
+  - **Resolve when:** real copper layout is defined and the first prototype is available.
+  - **Blocked by:** electrical PCB layout + prototype.
+  - **Resolve in:** PCB + prototype.
+  - **Verification:** manufacturer land constraints are met and measured temperature error remains within the chosen system target.
 
 - **SHT40 cavity-detail modeling remains provisional.**
   - Final package used: **1.5 × 1.5 × 0.54 mm** from Sensirion Figure 15.
@@ -327,6 +329,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-26 — PCB mechanical conflict cleanup — RESOLVED
+
+- Encoder pin locations were corrected to the Bourns push-switch drawing.
+- Added PCB holes / support slots so encoder pins no longer penetrate solid PCB.
+- Encoder body now seats without PCB penetration.
+- Added USB4105 stake slots and locating holes; modeled stakes/pegs now clear the PCB.
+- Added ESP32 antenna cutaway so host PCB no longer occupies the antenna keepout region.
+- Added SHT40 narrowed tongue / isolation geometry.
+- Remaining production lands, retention, copper, thermal and RF validation items stay active above.
 
 ### 2026-09-26 — Blender battery placeholder mismatch — RESOLVED
 
