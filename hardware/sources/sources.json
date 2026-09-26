@@ -1,0 +1,194 @@
+{
+  "revision": "2026-09-26",
+  "policy": "approved-manufacturer-sources-only",
+  "components": [
+    {
+      "id": "display",
+      "part": "Densitron DMA024QZHXNT0-1A",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "datasheet_mechanical_drawing",
+          "url": "https://www.densitron.com/files/library/files/products/202505/Product%20Spec_DMA024QZHXNT0-1A_v0.1.pdf",
+          "official": true,
+          "mirror_allowed": "not_assumed"
+        }
+      ]
+    },
+    {
+      "id": "encoder",
+      "part": "Bourns PEC11H-4115F-S0020",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "datasheet_mechanical_drawing",
+          "url": "https://www.bourns.com/docs/product-datasheets/pec11h.pdf",
+          "official": true,
+          "mirror_allowed": "not_assumed"
+        }
+      ]
+    },
+    {
+      "id": "usb_c",
+      "part": "GCT USB4105",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://gct.co/connector/usb4105",
+          "official": true
+        },
+        {
+          "type": "drawing",
+          "url": "https://gct.co/files/drawings/usb4105.pdf",
+          "official": true
+        },
+        {
+          "type": "specification",
+          "url": "https://gct.co/files/specs/usb4105-spec.pdf",
+          "official": true
+        },
+        {
+          "type": "cad_generator",
+          "url": "https://gct-embedded.partcommunity.com/3d-cad-models/?info=gct%2Fusb_connector%2Ftype_c%2Ftype_c%2Fhorizontal%2Fusb4105%2Fusb4105.prj",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "mcu",
+      "part": "Espressif ESP32-S3-WROOM-2-N32R16V",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "datasheet",
+          "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-2_datasheet_en.pdf",
+          "official": true
+        },
+        {
+          "type": "step",
+          "url": "https://www.espressif.com/sites/default/files/3dmodel/ESP32-S3-WROOM-2.STEP",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "sensor",
+      "part": "Sensirion SHT40",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://sensirion.com/products/catalog/SHT40",
+          "official": true
+        },
+        {
+          "type": "datasheet",
+          "url": "https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "charger",
+      "part": "TI BQ25185",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://www.ti.com/product/BQ25185",
+          "official": true
+        },
+        {
+          "type": "datasheet",
+          "url": "https://www.ti.com/lit/ds/symlink/bq25185.pdf",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "buck_boost",
+      "part": "TI TPS63900",
+      "quantity": 2,
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://www.ti.com/product/TPS63900",
+          "official": true
+        },
+        {
+          "type": "datasheet",
+          "url": "https://www.ti.com/lit/ds/symlink/tps63900.pdf",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "oled_negative_rail",
+      "part": "TI TPS63700",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://www.ti.com/product/TPS63700",
+          "official": true
+        },
+        {
+          "type": "datasheet",
+          "url": "https://www.ti.com/lit/ds/symlink/tps63700.pdf",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "fuel_gauge",
+      "part": "TI BQ27427",
+      "status": "selected",
+      "sources": [
+        {
+          "type": "product_page",
+          "url": "https://www.ti.com/product/BQ27427",
+          "official": true
+        },
+        {
+          "type": "datasheet",
+          "url": "https://www.ti.com/lit/ds/symlink/bq27427.pdf",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "inductors",
+      "part": "Murata DFE252012F family",
+      "selected": [
+        "DFE252012F-2R2M=P2",
+        "DFE252012F-4R7M=P2"
+      ],
+      "status": "selected",
+      "sources": [
+        {
+          "type": "family_datasheet",
+          "url": "https://www.murata.com/~/media/webrenewal/products/inductor/chip/tokoproducts/wirewoundmetalalloychiptype/m_dfe252012f.ashx",
+          "official": true
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "part": "A&S Power AS405070",
+      "status": "selected_baseline_exact_pack_verify",
+      "sources": [
+        {
+          "type": "manufacturer_listing",
+          "url": "https://as-battery.com/index.php/3-subchannelproducts/65120-37V-55mah-lithium-polyme.html",
+          "official": true
+        }
+      ],
+      "limitations": [
+        "exact finished pack drawing unavailable/unchecked",
+        "PCM/wire exit/connector not frozen"
+      ]
+    }
+  ]
+}
