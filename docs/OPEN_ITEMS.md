@@ -244,6 +244,33 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 - **ESP32 shield cosmetic details remain provisional.**
   - Shield sheet thickness and plating detail are not mechanically critical and were not frozen.
 
+### Power stage / PCB power layout
+
+- **Power-stage package geometry is now realistic, but placement is still provisional.**
+  - BQ25185, TPS63900 ×2, TPS63700, BQ27427 and three Murata DFE252012F inductors fit in the current reserved area with no physical collisions.
+  - Maximum component height above PCB in this group: **1.20 mm**.
+  - Minimum clearance to battery safety envelope: **18.25 mm**.
+  - Minimum clearance to SHT40: **44.35 mm**.
+  - Minimum clearance to ESP32: **25.06 mm**.
+  - Minimum clearance to rear enclosure wall: **2.10 mm**.
+  - Minimum clearance to AMOLED / FPC: **8.75 mm**.
+  - No power component is currently placed directly behind the battery footprint.
+
+- **Converter passive layout is not validated.**
+  - Current power-zone reference objects only reserve conceptual area for capacitors / feedback / support passives.
+  - Exact capacitor values, footprints, current-loop placement, thermal vias, copper areas and solder allowances remain unresolved.
+  - **Resolve when:** real PCB placement and routing begin.
+  - **Blocked by:** PCB mechanical layout stage.
+  - **Resolve in:** PCB.
+  - **Verification:** selected ICs + inductors + required passives fit with manufacturer-recommended placement constraints and no conflict with other mechanical zones.
+
+- **Power-stage thermal implementation is not validated.**
+  - No copper pours, thermal vias or real board thermal path are modeled yet.
+  - **Resolve when:** PCB copper / routing architecture is defined.
+  - **Blocked by:** real PCB layout.
+  - **Resolve in:** PCB.
+  - **Verification:** charger / regulator thermal paths are implemented without coupling significant heat into the SHT40 sensing region or battery.
+
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
