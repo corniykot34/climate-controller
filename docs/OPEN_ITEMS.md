@@ -260,8 +260,42 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ### Sensor / airflow
 
 - **SHT40 ambient-air path is not finalized.**
-  - Sensor remains intended for a thermally isolated edge/tongue region.
-  - Final vent / airflow geometry must be designed with the enclosure, not during component blockout.
+  - Current bottom-edge airflow route is geometrically plausible but blocked by the solid enclosure wall.
+  - Sensor opening is immediately unobstructed internally.
+  - Front cover clearance above sensing opening: **14.36 mm**.
+  - Rear-wall clearance: **2.10 mm**.
+  - Bottom-wall clearance: **2.75 mm**.
+  - **Resolve when:** enclosure airflow / vent architecture is being designed.
+  - **Blocked by:** realistic component set + enclosure architecture.
+  - **Resolve in:** enclosure.
+  - **Verification:** open ambient-air path exists from exterior to sensing region without hard obstruction and without exposing the sensor to direct internal heat flow.
+
+- **SHT40 thermal isolation is not yet verified.**
+  - Current distance to battery: approximately **52.26 mm**; battery safety-envelope clearance **52.00 mm**.
+  - Current distance to ESP32 / antenna region: approximately **26.25 mm**.
+  - Current distance to nearest power zone: approximately **40.73 mm**.
+  - These separations are favorable, but the current tongue remains continuously connected and approximately **6 mm wide**.
+  - Sensirion guidance indicates no underlying copper except the pin pads, and central-pad soldering is discouraged.
+  - **Resolve when:** the real PCB outline, copper strategy, and sensor tongue are being designed.
+  - **Blocked by:** realistic PCB layout stage.
+  - **Resolve in:** PCB.
+  - **Verification:** sensor zone uses an appropriate copper/thermal-isolation strategy and prototype temperature error remains within the chosen system accuracy target.
+
+- **SHT40 PCB isolation geometry is unresolved.**
+  - Possible narrow-neck / slot / copper-reduction changes remain open.
+  - No PCB cuts or vent geometry were created during the component-modeling pass.
+  - **Resolve when:** sensor PCB region is being laid out.
+  - **Blocked by:** final PCB architecture.
+  - **Resolve in:** PCB.
+  - **Verification:** manufacturer land-pattern constraints are respected and the sensor region is physically isolated from major heat-conduction paths.
+
+- **SHT40 cavity-detail modeling remains provisional.**
+  - Final package used: **1.5 × 1.5 × 0.54 mm** from Sensirion Figure 15.
+  - Cavity depth / internal cosmetic detail was not treated as production geometry.
+  - **Resolve when:** only if a higher-fidelity component model is actually required for documentation or interference analysis.
+  - **Blocked by:** need for such fidelity.
+  - **Resolve in:** component model.
+  - **Verification:** revised geometry matches manufacturer source data.
 
 ---
 
