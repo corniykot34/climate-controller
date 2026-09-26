@@ -15,6 +15,18 @@ This directory contains the project’s mechanical reference cards for component
 | TI charger / regulator / gauge ICs | `POWER_ICS.md` | Official TI package data available | Ready as accurate package blocks |
 | Murata power inductors | `POWER_INDUCTORS.md` | Official family drawings/specs available | Ready |
 
+## Approved source whitelist
+
+Before using external manufacturer material, consult:
+
+`hardware/sources/README.md`
+
+Machine-readable manifest:
+
+`hardware/sources/sources.json`
+
+Only the sources whitelisted there are approved for project lookup.
+
 ## Rule
 
 For mechanically significant parts:
