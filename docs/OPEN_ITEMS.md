@@ -80,6 +80,33 @@ Do not rely on chat history for deferred engineering issues.
   - At **0.8 mm** travel, modeled clearance is **0.2 mm**.
   - Keep this as a constraint when the front stack is later redesigned.
 
+### USB-C
+
+- **USB4105 PCB mounting features are not yet implemented in the PCB.**
+  - SMT tails currently meet the PCB top plane plausibly.
+  - Shell stakes penetrate **0.95 mm** into the currently unperforated **1.6 mm PCB**.
+  - Locating pegs penetrate **0.60 mm** into the unperforated PCB.
+  - Final PCB must add the manufacturer-defined pads / through-holes / locating holes.
+
+- **USB4105 shell-stake production suffix is still unresolved.**
+  - Current Blender model uses a provisional stake length.
+  - Provisional stakes currently stop **0.65 mm above the PCB underside**.
+  - Freeze the exact USB4105 suffix before final PCB release.
+
+- **USB-C enclosure cutout is intentionally deferred.**
+  - Current mating face is recessed **0.50 mm** behind the exterior surface.
+  - Minimum shell-to-enclosure clearance is **0.30 mm**.
+  - Plug-approach reference volume is currently unobstructed.
+  - Final cutout / chamfer / tolerance stack must be designed during enclosure DFM.
+
+- **USB-C rear-wall clearance is limited but currently non-colliding.**
+  - Provisional shell stakes have **1.15 mm** rear-wall clearance.
+  - Rear clearance to the charger / main-regulator reservation is approximately **7.74 mm diagonally**.
+
+- **Some USB4105 internal geometry remains approximate.**
+  - Undimensioned internal shell / insulator / contact details and the plug-approach allowance are not production geometry.
+  - Use the manufacturer drawing as the source of truth where dimensions are available.
+
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
