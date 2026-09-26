@@ -49,6 +49,37 @@ Do not rely on chat history for deferred engineering issues.
   - Full free front-glass area is intended to be touch-capable after wake.
   - Final electrode geometry, routing and controller implementation require prototype validation.
 
+### Encoder / wheel stack
+
+- **Current wheel bore does not provide positive rotational locking on the encoder D-shaft.**
+  - Current shaft engagement in the modeled wheel region is **4.1 mm**.
+  - Tip clearance is **0.8 mm**.
+  - Engagement is mechanically plausible, but the current circular bore must later be replaced by a real D-shaft hub / retention solution.
+
+- **Encoder bushing cannot clamp the current front cover.**
+  - In the present geometry, the bushing terminates **3.4 mm behind the rear surface of the front cover**.
+  - Nut and washer fit the bushing itself, but cannot reach / clamp the current front structure.
+  - Front support / encoder mounting architecture must be redesigned later; do not fake it during component-modeling passes.
+
+- **Encoder pin / PCB geometry is unresolved.**
+  - Provisional rear-facing pins currently intersect the unperforated PCB through the full **1.6 mm PCB thickness**.
+  - Final pin geometry and the real manufacturer footprint / board holes must be used during PCB design.
+
+- **Encoder pins penetrate the current rear wall by 0.9 mm.**
+  - This is a direct conflict in the current blockout.
+  - Resolve only after the realistic PCB / enclosure architecture is being rebuilt.
+
+- **Encoder body currently contacts the PCB mounting plane.**
+  - Verify whether this contact matches the actual Bourns mounting arrangement when the real footprint / mounting scheme is implemented.
+
+- **Encoder cosmetic / secondary mechanical details remain provisional.**
+  - Flat depth, housing detail and exact pin layout are not yet manufacturer-verified in the Blender model.
+
+- **Encoder push travel is currently feasible.**
+  - Nominal **0.5 mm** travel is collision-free and leaves **0.5 mm wheel-to-cover clearance**.
+  - At **0.8 mm** travel, modeled clearance is **0.2 mm**.
+  - Keep this as a constraint when the front stack is later redesigned.
+
 ### PCB / enclosure
 
 - **Main PCB outline and component placement are still provisional.**
