@@ -134,16 +134,10 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Exact PCM, wire exit, lead length, connector, seam construction and retention remain unresolved.
   - Current Blender/mechanical work uses the conservative project safety envelope, not a claimed production pack.
 
-- **Current AS405070 safety-envelope side clearance is below target.**
-  - Modeled safety envelope: **72.5 × 50.5 × 5.0 mm**.
-  - Minimum sidewall clearance: **0.25 mm**.
-  - Project target: **0.50 mm**.
-  - This is geometrically non-colliding but not yet acceptable as a production clearance.
-  - Resolve during enclosure / battery-retention redesign, not during component-modeling passes.
-
 - **Current battery clearances otherwise remain non-colliding.**
   - Safety-envelope to PCB: **7.25 mm**.
   - Safety-envelope to rear wall: **1.30 mm**.
+  - Safety-envelope to left/right side walls: **0.50 mm each** after rear-shell redesign.
   - Physical pouch rear clearance: **1.80 mm**.
   - Forward Z space over pouch footprint: at least **10.05 mm**.
   - AMOLED clearance: **9.55 mm**.
@@ -197,11 +191,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Provisional stakes currently stop **0.65 mm above the PCB underside**.
   - Freeze the exact USB4105 suffix before final PCB release.
 
-- **USB-C enclosure cutout is intentionally deferred.**
+- **USB-C enclosure opening exists mechanically; production tolerance / DFM remains open.**
   - Current mating face is recessed **0.50 mm** behind the exterior surface.
-  - Minimum shell-to-enclosure clearance is **0.30 mm**.
-  - Plug-approach reference volume is currently unobstructed.
-  - Final cutout / chamfer / tolerance stack must be designed during enclosure DFM.
+  - Current opening: **15.60 × 7.18 mm**.
+  - Connector-to-opening clearance is at least **1.90 mm**.
+  - Plug-approach clearance is at least **0.30 mm** and currently unobstructed.
+  - Final tolerance stack, manufacturing method and exact USB4105 stake variant remain unresolved.
+  - **Resolve when:** enclosure DFM and connector production variant are frozen.
+  - **Blocked by:** final USB4105 suffix + enclosure manufacturing process.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** port opening, plug insertion and connector retention meet drawing tolerances on production-intent geometry.
 
 - **USB-C rear-wall clearance is limited but currently non-colliding.**
   - Provisional shell stakes have **1.15 mm** rear-wall clearance.
@@ -213,13 +212,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 
 ### ESP32-S3-WROOM-2
 
-- **RF compliance is not established for the current ESP32 placement.**
-  - The module antenna faces the PCB edge but does **not** overhang the base PCB.
-  - Current main PCB remains directly beneath the full modeled **18 × 6 mm antenna footprint**.
-  - Espressif recommends placing the module PCB antenna outside the base board when possible; if that is not possible, the base board should be cut away below and beside the antenna to provide clearance.
-  - Current antenna-to-battery clearance: **7.75 mm**.
-  - Current antenna-to-enclosure-sidewall clearance: **1.50 mm**.
-  - Final RF layout must be checked against Espressif's module-placement guidance and later validated on hardware.
+- **RF compliance is not established for the current ESP32 placement / housing.**
+  - Host PCB cutaway beneath the antenna is now implemented mechanically.
+  - Current antenna-to-battery safety-envelope clearance remains approximately **7.75 mm**.
+  - Rear-shell redesign improved antenna-to-sidewall clearance to **2.00 mm** and rear clearance from antenna surface to **3.40 mm**.
+  - The current housing still does not meet the conservative **15 mm** lateral recommendation used for this project; remaining lateral shortfall is **13.00 mm**.
+  - Final RF layout / housing interaction must be validated against Espressif guidance and on hardware.
+  - **Resolve when:** enclosure geometry and electrical PCB copper layout are both near-final.
+  - **Blocked by:** final enclosure + final RF copper/ground layout.
+  - **Resolve in:** PCB + enclosure + prototype.
+  - **Verification:** manufacturer guidance is satisfied as far as geometry permits and RF performance is validated on prototype hardware.
 
 - **ESP32 host-board antenna cutaway is implemented mechanically; copper / RF margin is not yet validated.**
   - The host PCB is now removed beneath the antenna with lateral cutback.
@@ -265,23 +267,27 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 
 ### PCB / enclosure
 
-- **Main PCB outline and component placement are still provisional.**
+- **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
   - Current mechanically rebuilt PCB: **70 × 50 × 1.6 mm**.
-  - Final PCB must be rebuilt around realistic component geometry.
+  - Mechanical holes, antenna cutaway and sensor tongue are implemented.
+  - Production lands, copper, routing, tolerances and exact passive placement remain open for electrical PCB work.
 
-- **Current enclosure dimensions are provisional packaging results only.**
-  - Current blockout: approximately 76 × 120 × 20 mm body, ~27 mm including wheel.
-  - Realistic component modeling and the mechanically rebuilt PCB are now complete enough to begin enclosure redesign.
+- **Rear / side / bottom shell has been rebuilt; enclosure is not yet fully frozen.**
+  - External body remains **76 × 120 × 20 mm**.
+  - Rear / top / bottom wall thickness: **1.50 mm**.
+  - Side walls: **1.25 mm**.
+  - Local antenna relief: **1.00 mm**.
   - Current PCB-to-rear-wall clearance: **0.50 mm**.
-  - Must be revalidated during enclosure work.
+  - PCB-to-sidewall clearance: **1.75 mm**.
+  - Front stack, SHT40 vent, encoder support, wall mount and manufacturing details remain open.
 
-- **Corrected USB-C board-edge geometry collides with the current bottom wall.**
-  - The mechanically correct PCB / USB-C edge extends approximately **1.0 mm into the existing bottom wall**.
-  - This is a confirmed enclosure conflict, not a PCB modeling error.
-  - **Resolve when:** bottom enclosure / USB-C opening is redesigned.
-  - **Blocked by:** completed mechanical PCB and USB-C geometry — now available.
-  - **Resolve in:** enclosure.
-  - **Verification:** no interference between PCB/USB-C and bottom wall, with a manufacturable port opening and plug approach.
+- **Rear-shell manufacturing details are not frozen.**
+  - Current rear shell is a connected manifold mesh with 1.50 mm rear/top/bottom walls, 1.25 mm side walls and 1.00 mm local antenna relief.
+  - Draft, radii, seam strategy, assembly split, bosses / fasteners and production process are still unresolved.
+  - **Resolve when:** enclosure architecture / assembly method is selected.
+  - **Blocked by:** front-stack design + wall-mount / assembly decisions.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** manufacturable shell with defined assembly split, retention method, draft/radii and no component interference.
 
 - **Wall mounting architecture is intentionally deferred.**
   - Do not introduce wall-mount hardware until the internal mechanical architecture is stable.
@@ -329,6 +335,15 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-26 — Rear-shell USB / battery clearance conflicts — RESOLVED
+
+- Rebuilt rear / side / bottom housing shell without changing external **76 × 120 × 20 mm** body size.
+- Eliminated the previous approximately **1.0 mm USB-C / bottom-wall collision**.
+- Added a real USB-C enclosure opening; plug approach remains unobstructed.
+- Increased battery safety-envelope side clearance from **0.25 mm** to **0.50 mm** on both sides.
+- Preserved **0.50 mm** PCB-to-rear-wall clearance.
+- Remaining USB production tolerances, RF clearance and enclosure manufacturing details stay active above.
 
 ### 2026-09-26 — PCB mechanical conflict cleanup — RESOLVED
 
