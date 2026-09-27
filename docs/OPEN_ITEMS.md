@@ -268,6 +268,38 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - **Resolve in:** PCB.
   - **Verification:** charger / regulator thermal paths are implemented without coupling significant heat into the SHT40 sensing region or battery.
 
+### Internal mounting / retention
+
+- **PCB support / lateral locating structure is now implemented mechanically.**
+  - Four PCB supports contact valid board material at Z = **2.00 mm** without forcing board deformation.
+  - Four edge stops provide lateral location with **0.25 mm** gaps.
+  - PCB remains removable upward.
+  - No new collisions were detected.
+  - **Resolved mechanically:** basic PCB support and lateral anti-shift location.
+  - **Still open:** final axial retention, boss strength, tolerance stack and production fastener strategy.
+  - **Resolve when:** enclosure assembly / retention method is selected.
+  - **Blocked by:** front-carrier / lid architecture + final assembly strategy.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** PCB is positively retained in all axes, removable during service/assembly, and retention survives handling / push loads without excessive board bending.
+
+- **Battery anti-shift geometry is implemented without clamping the pouch.**
+  - Two low rounded guides preserve **0.50 mm** minimum clearance to the battery safety envelope.
+  - Swelling space and the provisional lead-exit region remain open.
+  - Final retention method is still unresolved.
+  - **Resolve when:** battery retention / adhesive strategy is selected.
+  - **Blocked by:** final pack variant + enclosure assembly strategy.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** battery cannot migrate in normal use, remains unclamped, and pouch / lead geometry stays clear under assembly tolerance and swelling allowance.
+
+- **Future front-carrier attachment references are now placed.**
+  - Reference locations: **(-34, 54, 12)**, **(34, 54, 12)**, **(34, -49, 12) mm**.
+  - These are nonphysical reference points only.
+  - Front carrier / lid and encoder load path are not yet designed.
+  - **Resolve when:** front-lid / carrier architecture is being designed.
+  - **Blocked by:** current internal support pass — now available.
+  - **Resolve in:** enclosure / front carrier.
+  - **Verification:** carrier attaches at structurally sensible points without display/touch/battery/RF conflicts and accepts encoder push load.
+
 ### PCB / enclosure
 
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
@@ -339,6 +371,15 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-27 — Basic internal PCB / battery locating structure — RESOLVED
+
+- Added four PCB support points and four lateral edge stops.
+- Verified board support without forced deformation and preserved upward removability.
+- Added two low rounded battery anti-shift guides while preserving **0.50 mm** minimum safety-envelope clearance.
+- Preserved battery swelling space and lead-exit region.
+- No new ESP32 antenna, SHT40 or USB-C interference was introduced.
+- Final axial PCB retention, fasteners and enclosure structural validation remain active above.
 
 ### 2026-09-27 — Oversized USB-C enclosure opening — RESOLVED
 
