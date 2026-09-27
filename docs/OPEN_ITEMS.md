@@ -167,11 +167,6 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Tip clearance is **0.8 mm**.
   - Engagement is mechanically plausible, but the current circular bore must later be replaced by a real D-shaft hub / retention solution.
 
-- **Encoder bushing cannot clamp the current front cover.**
-  - In the present geometry, the bushing terminates **3.4 mm behind the rear surface of the front cover**.
-  - Nut and washer fit the bushing itself, but cannot reach / clamp the current front structure.
-  - Front support / encoder mounting architecture must be redesigned later; do not fake it during component-modeling passes.
-
 - **Encoder pins penetrate the current rear wall by 0.9 mm.**
   - This is a direct conflict in the current blockout.
   - Resolve only after the realistic PCB / enclosure architecture is being rebuilt.
@@ -179,10 +174,24 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 - **Encoder cosmetic / secondary mechanical details remain provisional.**
   - Flat depth, housing detail and exact pin layout are not yet manufacturer-verified in the Blender model.
 
-- **Encoder push travel is currently feasible.**
-  - Nominal **0.5 mm** travel is collision-free and leaves **0.5 mm wheel-to-cover clearance**.
-  - At **0.8 mm** travel, modeled clearance is **0.2 mm**.
-  - Keep this as a constraint when the front stack is later redesigned.
+- **Encoder push travel remains feasible with the new structural front carrier.**
+  - Nominal **0.5 mm** travel is collision-free and leaves **0.50 mm** wheel-to-glass/frame clearance.
+  - At **0.8 mm** travel, modeled clearance is **0.20 mm**.
+  - Encoder push load now bypasses the glass and transfers into the structural front carrier.
+  - Preserve these clearances during later DFM refinement.
+
+- **Encoder structural mounting is now implemented in the front carrier.**
+  - Integral carrier support thickness: **2.50 mm**.
+  - Existing washer / nut positions are preserved.
+  - Nut engagement: **2.00 mm**, flush with bushing end.
+  - The former **3.4 mm** front-cover clamping gap is resolved by mounting to the structural carrier instead of the glass.
+  - Glass uses a concealed **Ø13.20 mm** non-load-bearing service passage.
+  - Final clamp tolerance and structural strength remain provisional.
+  - **Resolve when:** enclosure DFM / tolerance stack is finalized.
+  - **Blocked by:** production material/process + fastener/tolerance definition.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** carrier clamp remains secure across tolerance stack and repeated encoder push cycles without loading the glass.
+
 
 ### USB-C
 
@@ -220,6 +229,7 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Current antenna-to-battery safety-envelope clearance remains approximately **7.75 mm**.
   - Rear-shell redesign improved antenna-to-sidewall clearance to **2.00 mm** and rear clearance from antenna surface to **3.40 mm**.
   - The current housing still does not meet the conservative **15 mm** lateral recommendation used for this project; remaining lateral shortfall is **13.00 mm**.
+  - The new front perimeter still enters the modeled **15 mm** housing RF reference; the front-lid pass did not resolve this RF limitation.
   - Final RF layout / housing interaction must be validated against Espressif guidance and on hardware.
   - **Resolve when:** enclosure geometry and electrical PCB copper layout are both near-final.
   - **Blocked by:** final enclosure + final RF copper/ground layout.
@@ -291,14 +301,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - **Resolve in:** enclosure / DFM.
   - **Verification:** battery cannot migrate in normal use, remains unclamped, and pouch / lead geometry stays clear under assembly tolerance and swelling allowance.
 
-- **Future front-carrier attachment references are now placed.**
-  - Reference locations: **(-34, 54, 12)**, **(34, 54, 12)**, **(34, -49, 12) mm**.
-  - These are nonphysical reference points only.
-  - Front carrier / lid and encoder load path are not yet designed.
-  - **Resolve when:** front-lid / carrier architecture is being designed.
-  - **Blocked by:** current internal support pass — now available.
-  - **Resolve in:** enclosure / front carrier.
-  - **Verification:** carrier attaches at structurally sensible points without display/touch/battery/RF conflicts and accepts encoder push load.
+- **Structural front lid / carrier is implemented mechanically; production retention remains provisional.**
+  - Front lid size: **76 × 120 mm** with **2.50 mm** visible frame on all sides.
+  - Glass insert: **70.60 × 114.60 × 1.50 mm**, flush with frame.
+  - Perimeter seam: **0.20 mm**; locating clearance: **0.25 mm**.
+  - Four attachment positions: **(-34,54,12)**, **(34,54,12)**, **(-34,-53.5,12)**, **(34,-53.5,12) mm**.
+  - Rear fastener paths are clear, but final fastener sizes, boss strength and production tolerances are not frozen.
+  - **Resolve when:** enclosure DFM / production retention system is selected.
+  - **Blocked by:** final assembly method + production fastener choice.
+  - **Resolve in:** enclosure / DFM.
+  - **Verification:** four-point lid retention survives encoder push / handling loads and remains serviceable without visible front fasteners.
 
 ### PCB / enclosure
 
@@ -314,7 +326,8 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - Local antenna relief: **1.00 mm**.
   - Current PCB-to-rear-wall clearance: **0.50 mm**.
   - PCB-to-sidewall clearance: **1.75 mm**.
-  - Front stack, SHT40 vent, encoder support, wall mount and manufacturing details remain open.
+  - Front lid / glass / encoder carrier are now implemented mechanically.
+  - SHT40 vent, wall mount and manufacturing details remain open.
 
 - **Rear-shell manufacturing details are not frozen.**
   - Current rear shell is a connected manifold mesh with 1.50 mm rear/top/bottom walls, 1.25 mm side walls and 1.00 mm local antenna relief.
@@ -338,7 +351,7 @@ When an item is resolved, move it from **Active open items** to **Closed items**
   - **Resolve when:** enclosure airflow / vent architecture is being designed.
   - **Blocked by:** realistic component set + enclosure architecture — now substantially available.
   - **Resolve in:** enclosure.
-  - **Scheduled:** immediately after the front-stack / encoder-support pass so it remains a separate single-scope enclosure task.
+  - **Scheduled:** NEXT enclosure task; front-stack / encoder-support pass is now complete.
   - **Verification:** open ambient-air path exists from exterior to sensing region without hard obstruction and without exposing the sensor to direct internal heat flow.
 
 - **SHT40 thermal isolation is not yet verified.**
@@ -371,6 +384,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-27 — Structural front lid and encoder carrier — RESOLVED
+
+- Created a flush **76 × 120 mm** structural front lid with **2.50 mm** visible black frame and bonded **70.60 × 114.60 × 1.50 mm** glass insert.
+- Replaced the obsolete three-point carrier concept with four structural attachment points.
+- Implemented rear-access fastener paths and a **2.50 mm** integral encoder carrier.
+- Resolved the former **3.4 mm** encoder bushing/front-cover mounting gap.
+- Verified **0.50 mm** nominal and **0.20 mm** maximum-checked wheel clearance during encoder push.
+- Confirmed encoder push load bypasses the glass.
+- Final production fasteners, clamp tolerances, glass bonding/optics and D-shaft locking remain active items.
 
 ### 2026-09-27 — Basic internal PCB / battery locating structure — RESOLVED
 
