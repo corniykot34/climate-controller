@@ -314,6 +314,16 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 
 ### PCB / enclosure
 
+- **Front-lid exterior profile does not yet match the approved visual reference.**
+  - Current Blender lid reads as a broad flat plate / stepped border around an inset panel.
+  - Approved reference requires a much more integrated front-lid expression: narrow glossy black perimeter frame, glass reading almost flush with the frame, soft rounded outer edge, and no broad terrace / shelf around the glass.
+  - Mechanical architecture (four anchors, carrier, encoder load path) may remain, but visible exterior geometry needs correction.
+  - **Resolve when:** immediately, before SHT40 vent or any further enclosure detailing.
+  - **Blocked by:** none; approved visual reference exists at repository root.
+  - **Resolve in:** front lid exterior geometry.
+  - **Verification:** side/corner view visually matches the reference character: narrow perimeter lip, near-flush glass, soft outer radius, flush lid-to-body sides, no plate-like stepped appearance.
+
+
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
   - Current mechanically rebuilt PCB: **70 × 50 × 1.6 mm**.
   - Mechanical holes, antenna cutaway and sensor tongue are implemented.
