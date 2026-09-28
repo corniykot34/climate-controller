@@ -315,13 +315,17 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ### PCB / enclosure
 
 - **Front-lid exterior profile does not yet match the approved visual reference.**
-  - Current Blender lid reads as a broad flat plate / stepped border around an inset panel.
-  - Approved reference requires a much more integrated front-lid expression: narrow glossy black perimeter frame, glass reading almost flush with the frame, soft rounded outer edge, and no broad terrace / shelf around the glass.
-  - Mechanical architecture (four anchors, carrier, encoder load path) may remain, but visible exterior geometry needs correction.
+  - Current Blender lid no longer has the broad terrace, but the visible front rim is still too wide and too flat.
+  - Current visible frame width is **2.50 mm** on all sides, with approximately **1.70 mm** of flat frontal rim.
+  - Approved reference requires the glass to dominate the face and the black frame to read as a very narrow rounded edge.
+  - Target visible flat frontal rim: approximately **1.20–1.50 mm**.
+  - The remaining structural frame width may stay around **2.5 mm** behind the glass, but it should be redistributed into the outer rounded side profile and hidden glass-support shelf rather than presented as a flat front band.
+  - Glass must remain essentially flush with the frame.
+  - Mechanical architecture (four anchors, carrier, encoder load path) must remain unchanged.
   - **Resolve when:** immediately, before SHT40 vent or any further enclosure detailing.
   - **Blocked by:** none; approved visual reference exists at repository root.
   - **Resolve in:** front lid exterior geometry.
-  - **Verification:** side/corner view visually matches the reference character: narrow perimeter lip, near-flush glass, soft outer radius, flush lid-to-body sides, no plate-like stepped appearance.
+  - **Verification:** front/corner view shows approximately **1.20–1.50 mm** flat visible rim, glass visually dominates the face, outer frame rolls softly into the side, lid/body remain flush, and there is no stepped or plate-like appearance.
 
 
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
