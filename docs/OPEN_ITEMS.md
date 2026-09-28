@@ -315,19 +315,19 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ### PCB / enclosure
 
 - **Front-lid exterior profile still does not match the approved visual reference.**
-  - The latest patch inverted the intended emphasis: the front-facing rim is still visually broad while the side-facing rounded band is too narrow.
-  - Approved reference requires the opposite proportion: the front-facing black line should be very narrow, while most of the frame's visible mass should roll around the outer edge / side.
-  - **Front-rim target:** visible flat frontal rim approximately **0.6–0.9 mm**, nominally about **0.75 mm**, with the glass enlarged accordingly.
-  - **Outer plan-corner target:** visibly softer lid corners, approximately **R3.5–R4.5 mm**, nominally about **R4.0 mm**; the glass corner radius should follow the same character at a smaller radius so the visible rim remains visually consistent around the corner.
-  - Hidden structural frame / glass-support shelf may remain around **2.5 mm** or whatever current mechanics require, but it must stay hidden behind the glass / carrier.
-  - Side-facing rounded band should visually dominate the frame profile and carry the premium soft edge.
-  - Glass remains **1.50 mm** thick and essentially flush with the adjacent front rim, but its plan dimensions MAY and SHOULD increase to achieve the reference proportion.
-  - Treat these as four separate measurements: **visible flat front rim**, **outer plan corner radius**, **edge roll / side-facing profile**, and **hidden structural/bonding shelf width**. Do not collapse them into one "frame width" value.
+  - Recent patches over-shaped the perimeter into a rounded bead / molding. This is incorrect.
+  - Approved reference is simpler: a thin front lid with a large plan-view corner radius, a nearly full-face glass insert, and only a small normal edge rounding.
+  - **Visible front rim target:** approximately **0.8–1.2 mm**, nominally about **1.0 mm** around the glass.
+  - **Outer plan-view lid corner radius target:** approximately **R3.5–R4.5 mm**, nominally about **R4.0 mm**.
+  - **Cross-sectional outer edge rounding:** small only, approximately **R0.5–R0.8 mm**; do NOT create a separate convex bead or molding.
+  - Glass remains **1.50 mm** thick and may increase in plan dimensions so it sits close to the outer edge. A slight glass inset of about **0.10–0.20 mm** below the frame front surface is acceptable and may better match the reference than perfect flushness.
+  - Hidden structural frame / bonding shelf may remain wider behind the glass as required by mechanics, but it must not appear as a broad visible bezel.
+  - Treat these separately: **visible front rim**, **outer plan corner radius**, **small edge-rounding radius**, and **hidden structural shelf width**.
   - Mechanical architecture (four anchors, carrier, encoder load path) must remain unchanged.
   - **Resolve when:** immediately, before SHT40 vent or any further enclosure detailing.
   - **Blocked by:** none; approved visual reference exists at repository root.
   - **Resolve in:** front lid exterior geometry.
-  - **Verification:** front view shows only a hairline black rim around a nearly full-face glass insert; oblique/side view shows a visibly broader soft rounded black edge; corner view shows a smooth approximately R4 plan corner; no broad frontal bezel remains.
+  - **Verification:** front view shows nearly full-face glass with only a thin black rim; oblique view shows a simple thin lid edge with a small normal rounding, not a bead; corner view shows a soft approximately R4 plan corner; lid/body sides remain flush and the seam stays narrow.
 
 
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
