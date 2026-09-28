@@ -314,20 +314,18 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 
 ### PCB / enclosure
 
-- **Front-lid exterior profile still does not match the approved visual reference.**
-  - Recent patches over-shaped the perimeter into a rounded bead / molding. This is incorrect.
-  - Approved reference is simpler: a thin front lid with a large plan-view corner radius, a nearly full-face glass insert, and only a small normal edge rounding.
-  - **Visible front rim target:** approximately **0.8–1.2 mm**, nominally about **1.0 mm** around the glass.
-  - **Outer plan-view lid corner radius target:** approximately **R3.5–R4.5 mm**, nominally about **R4.0 mm**.
-  - **Cross-sectional outer edge rounding:** small only, approximately **R0.5–R0.8 mm**; do NOT create a separate convex bead or molding.
-  - Glass remains **1.50 mm** thick and may increase in plan dimensions so it sits close to the outer edge. A slight glass inset of about **0.10–0.20 mm** below the frame front surface is acceptable and may better match the reference than perfect flushness.
-  - Hidden structural frame / bonding shelf may remain wider behind the glass as required by mechanics, but it must not appear as a broad visible bezel.
-  - Treat these separately: **visible front rim**, **outer plan corner radius**, **small edge-rounding radius**, and **hidden structural shelf width**.
-  - Mechanical architecture (four anchors, carrier, encoder load path) must remain unchanged.
-  - **Resolve when:** immediately, before SHT40 vent or any further enclosure detailing.
-  - **Blocked by:** none; approved visual reference exists at repository root.
-  - **Resolve in:** front lid exterior geometry.
-  - **Verification:** front view shows nearly full-face glass with only a thin black rim; oblique view shows a simple thin lid edge with a small normal rounding, not a bead; corner view shows a soft approximately R4 plan corner; lid/body sides remain flush and the seam stays narrow.
+- **Visible front frame concept is SUPERSEDED.**
+  - The approved exterior architecture is now **glass-only on the front face**: no visible black perimeter frame / bezel.
+  - Front glass remains **1.50 mm** thick unless later engineering requires otherwise.
+  - **Glass plan-view corner radius: R4.0 mm.**
+  - **Housing/front-body plan-view corner radius: R4.0 mm.**
+  - Glass and housing corner radii therefore visually align.
+  - The existing hidden structural carrier, four anchors and encoder load path remain valid and must stay concealed behind the glass / inside the housing.
+  - Any previously modeled visible front-frame rim, bead, molding or perimeter strip must be removed from the exterior.
+  - **Resolve when:** immediately, before SHT40 vent or further enclosure detailing.
+  - **Blocked by:** none.
+  - **Resolve in:** front exterior geometry.
+  - **Verification:** straight front view shows only the glass as the front face; no visible perimeter frame remains; glass and housing both use R4 plan corners; hidden carrier and four-point structure remain mechanically intact.
 
 
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
@@ -400,6 +398,13 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 ---
 
 ## Closed items
+
+### 2026-09-28 — Visible front-frame architecture — SUPERSEDED
+
+- Removed the design requirement for a visible black perimeter frame around the front glass.
+- New exterior rule: **glass-only front face** with **R4.0 mm** plan-view corners.
+- Housing/front-body plan-view corners are also **R4.0 mm**.
+- Hidden carrier, four structural anchors and encoder load path remain part of the internal mechanical architecture.
 
 ### 2026-09-27 — Structural front lid and encoder carrier — RESOLVED
 
