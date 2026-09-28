@@ -316,17 +316,18 @@ When an item is resolved, move it from **Active open items** to **Closed items**
 
 - **Front-lid exterior profile still does not match the approved visual reference.**
   - The latest patch inverted the intended emphasis: the front-facing rim is still visually broad while the side-facing rounded band is too narrow.
-  - This happened partly because the previous instruction tried to preserve the existing **70.60 × 114.60 mm** glass while also asking for a much narrower visible rim; those constraints conflict.
   - Approved reference requires the opposite proportion: the front-facing black line should be very narrow, while most of the frame's visible mass should roll around the outer edge / side.
-  - **New target:** front-facing visible black rim approximately **0.6–0.9 mm** around the glass, with the glass enlarged accordingly.
-  - Hidden structural frame / glass-support shelf may remain wider behind the glass.
+  - **Front-rim target:** visible flat frontal rim approximately **0.6–0.9 mm**, nominally about **0.75 mm**, with the glass enlarged accordingly.
+  - **Outer plan-corner target:** visibly softer lid corners, approximately **R3.5–R4.5 mm**, nominally about **R4.0 mm**; the glass corner radius should follow the same character at a smaller radius so the visible rim remains visually consistent around the corner.
+  - Hidden structural frame / glass-support shelf may remain around **2.5 mm** or whatever current mechanics require, but it must stay hidden behind the glass / carrier.
   - Side-facing rounded band should visually dominate the frame profile and carry the premium soft edge.
   - Glass remains **1.50 mm** thick and essentially flush with the adjacent front rim, but its plan dimensions MAY and SHOULD increase to achieve the reference proportion.
+  - Treat these as four separate measurements: **visible flat front rim**, **outer plan corner radius**, **edge roll / side-facing profile**, and **hidden structural/bonding shelf width**. Do not collapse them into one "frame width" value.
   - Mechanical architecture (four anchors, carrier, encoder load path) must remain unchanged.
   - **Resolve when:** immediately, before SHT40 vent or any further enclosure detailing.
   - **Blocked by:** none; approved visual reference exists at repository root.
   - **Resolve in:** front lid exterior geometry.
-  - **Verification:** front view shows only a hairline black rim around a nearly full-face glass insert; oblique/side view shows a visibly broader soft rounded black edge; no broad frontal bezel remains.
+  - **Verification:** front view shows only a hairline black rim around a nearly full-face glass insert; oblique/side view shows a visibly broader soft rounded black edge; corner view shows a smooth approximately R4 plan corner; no broad frontal bezel remains.
 
 
 - **Main PCB mechanical outline is rebuilt; electrical layout remains provisional.**
